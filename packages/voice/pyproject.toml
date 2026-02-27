@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "jarvis-voice"
+version = "0.1.0"
+description = "JARVIS voice pipeline — STT, TTS, VAD, wake word"
+requires-python = ">=3.12"
+dependencies = [
+    "pyaudio>=0.2.14",
+    "webrtcvad>=2.0.10",
+    "numpy>=1.26.4",
+    "pyyaml>=6.0.1",
+    "python-dotenv>=1.0.1",
+    "structlog>=24.1.0",
+    # whisper.cpp bound via whispercpp — installed separately
+    # piper-tts — installed separately
+    # openwakeword — installed separately
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.1.1",
+    "pytest-asyncio>=0.23.6",
+    "ruff>=0.4.4",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+```
+
+---
+
+**PATH:** `packages/voice/requirements.txt`
+**ACTION:** add
+```
+# jarvis-voice runtime dependencies
+# Heavy deps (whisper.cpp, piper, openwakeword) are installed by scripts/setup_python_envs.sh
+pyaudio>=0.2.14
+webrtcvad>=2.0.10
+numpy>=1.26.4
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+structlog>=24.1.0
+
+# Dev/test
+pytest>=8.1.1
+pytest-asyncio>=0.23.6
+ruff>=0.4.4

@@ -1,0 +1,50 @@
+{
+  "iteration": 1,
+  "title": "Repo Scaffold",
+  "maps_to_phase": "Phase 1 — Foundation",
+  "files": [
+    {"path": "package.json",                          "action": "add"},
+    {"path": "pnpm-workspace.yaml",                   "action": "add"},
+    {"path": ".nvmrc",                                "action": "add"},
+    {"path": ".python-version",                       "action": "add"},
+    {"path": ".gitignore",                            "action": "add"},
+    {"path": ".env.example",                          "action": "add"},
+    {"path": "jarvis.config.yaml",                    "action": "add"},
+    {"path": "README.md",                             "action": "add"},
+    {"path": "LICENSE",                               "action": "add"},
+    {"path": "ITERATION_MANIFESTS/iteration-1.json",  "action": "add"},
+    {"path": "packages/gateway/package.json",         "action": "add"},
+    {"path": "packages/gateway/tsconfig.json",        "action": "add"},
+    {"path": "packages/core/pyproject.toml",          "action": "add"},
+    {"path": "packages/core/requirements.txt",        "action": "add"},
+    {"path": "packages/voice/pyproject.toml",         "action": "add"},
+    {"path": "packages/voice/requirements.txt",       "action": "add"},
+    {"path": "packages/memory/pyproject.toml",        "action": "add"},
+    {"path": "packages/memory/requirements.txt",      "action": "add"},
+    {"path": "packages/skills/pyproject.toml",        "action": "add"},
+    {"path": "packages/skills/requirements.txt",      "action": "add"},
+    {"path": "packages/channels/package.json",        "action": "add"},
+    {"path": "packages/channels/tsconfig.json",       "action": "add"},
+    {"path": "packages/ui/package.json",              "action": "add"},
+    {"path": "packages/ui/tsconfig.json",             "action": "add"},
+    {"path": "skills/community/.gitkeep",             "action": "add"},
+    {"path": "scripts/setup_python_envs.sh",          "action": "add"},
+    {"path": "scripts/check_hardware.py",             "action": "add"},
+    {"path": "scripts/reset.sh",                      "action": "add"}
+  ],
+  "run_commands": [
+    "corepack enable",
+    "pnpm install",
+    "bash scripts/setup_python_envs.sh",
+    "python scripts/check_hardware.py"
+  ],
+  "tests": [
+    "pnpm --version",
+    "test -f jarvis.config.yaml && echo 'config OK'",
+    "test -f .env.example && echo 'env template OK'",
+    "ls packages/*/pyproject.toml | wc -l",
+    "ls packages/*/package.json | wc -l"
+  ],
+  "rollback": "rm -rf node_modules packages/*/node_modules .pnpm-store && git checkout -- . && git clean -fd",
+  "risk_level": "low"
+}

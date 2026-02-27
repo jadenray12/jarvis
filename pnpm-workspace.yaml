@@ -1,0 +1,5 @@
+packages:
+  - "packages/gateway"
+  - "packages/channels"
+  - "packages/ui"
+  - "packages/skills"

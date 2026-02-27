@@ -1,1 +1,60 @@
+# Node
+node_modules/
+dist/
+build/
+.pnpm-store/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
 .env
+*.egg
+
+# Per-package venvs
+packages/core/.venv/
+packages/voice/.venv/
+packages/memory/.venv/
+packages/skills/.venv/
+
+# Data & secrets
+.env
+*.sqlite
+*.db
+data/
+models/
+*.gguf
+*.bin
+
+# Community skills (installed at runtime)
+skills/community/*
+!skills/community/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# JARVIS runtime
+.jarvis_session/
+memory_store/
+action_log/

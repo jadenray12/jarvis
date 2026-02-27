@@ -1,0 +1,32 @@
+{
+  "name": "@jarvis/channels",
+  "version": "0.1.0",
+  "private": true,
+  "description": "JARVIS channel adapters — Discord, Telegram, WhatsApp, Slack, iMessage, Matrix",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev":       "ts-node-esm src/index.ts",
+    "build":     "tsc",
+    "test":      "vitest run",
+    "lint":      "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean":     "rm -rf dist"
+  },
+  "dependencies": {
+    "discord.js":  "^14.15.2",
+    "grammy":      "^1.26.0",
+    "@whiskeysockets/baileys": "^6.7.8",
+    "@slack/bolt":  "^3.19.0",
+    "matrix-js-sdk":"^33.1.0",
+    "ws":          "^8.17.0",
+    "dotenv":      "^16.4.5",
+    "pino":        "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/ws":   "^8.5.10",
+    "@types/node": "^20.12.7",
+    "typescript":  "^5.4.5",
+    "ts-node":     "^10.9.2",
+    "vitest":      "^1.6.0"
+  }
+}
